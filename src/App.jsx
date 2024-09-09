@@ -11,13 +11,13 @@ function App() {
     console.log(results);
     e.preventDefault();
     axios
-      .get(`https://randomuser.me/api/?results=10`)
+      .get(`https://randomuser.me/api/?results=${results}`)
       .then((users) => setUsers(users.data.results));
   };
 
   const handleChange = (e) => {
     console.log(e.target.value);
-    const { name, value } = e.target.value;
+    const { name, value } = e.target;
     setParams({
       ...params,
       [name]: value,
