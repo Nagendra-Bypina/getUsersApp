@@ -37,18 +37,20 @@ function App() {
             name="results"
           />
         </Form.Group>
-        <ul>
-          {users.map((user, login) => {
-            return (
-              <li key={login.uuid}>
-                {user.name.first} {user.name.last} {user.phone}
-              </li>
-            );
-          })}
-        </ul>
-
-        <Button type="submit"> Get Users</Button>
+        <Button type="submit" className="mb-3">
+          {" "}
+          Get Users
+        </Button>
       </Form>
+      <ul>
+        {users.map((user, login) => {
+          return (
+            <li key={login.uuid} className="card">
+              {user.name.first} {user.name.last} {user.phone}
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 }
